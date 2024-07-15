@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment2-deployment
+  labels:
+    app: assignment2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assignment2
+  template:
+    metadata:
+      labels:
+        app: assignment2
+    spec:
+      containers:
+        - name: assignment2
+          image: mayureshkn99/assignment2:latest
+          ports:
+            - containerPort: 3030
